@@ -1,0 +1,22 @@
+Feature: Sign-in page
+Background: Given the user is already registered to the app
+Scenario: User supplies correct user name and password
+Given I am on the sign-in page
+	When I input the correct email address
+	And I input the correct password
+	And I click the “Sign In” button
+	Then the user should be authenticated
+	And I should be redirected to the dashboard
+Feature: Sign-up page
+Background: Given the user wants to register into the app
+Scenario:  User supplies the correct data into their profile
+	Given I am on the “create my account” page
+	When Input my first name
+	And I input my last name
+	And I input my correct e-mail address
+	And I input a password that contains at least 8 characters long, contain uppercase and lowercase letters, and have at least one number or symbol.
+	And I check the box “I agree to the terms of services and Privacy Policy”
+	And I click on the “sign up” button
+	Then I should be authenticated
+	And I should be redirected to the dashboard
+	And I should be presented with a success message
